@@ -5,10 +5,12 @@ function BurgerIcon({
   className,
   size = 25,
   children,
+  onClick = () => { }
 }: {
   className?: string;
   size?: number;
   children: React.ReactNode;
+  onClick: () => void;
 }) {
   return (
     <label>
@@ -16,6 +18,7 @@ function BurgerIcon({
       <RxHamburgerMenu
         size={size}
         className={`lg:hidden cursor-pointer ${className}`}
+        onClick={onClick}
       />
       {children}
     </label>

@@ -388,14 +388,18 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center my-5">
-          <Link href="/" className="section-btn">
+        {/* <div className="flex items-center justify-center my-5">
+          <Link href="/" className="section-btn group">
             <span className="ms-2 font-medium">Explore Offers</span>
-            <span className="bg-blue-700 rounded-full p-2">
-              <GoArrowUpRight size={20} className="text-white" />
+            <span className="bg-blue-700 rounded-full p-3 group-hover:scale-125 transition">
+              <GoArrowUpRight size={16} className="text-white" />
             </span>
           </Link>
-        </div>
+        </div> */}
+
+        <Link href="/" className="section-btn">
+          <span>Explore Offers</span>
+        </Link>
       </section>
 
       <section className="my-10">

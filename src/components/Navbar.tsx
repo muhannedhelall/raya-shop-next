@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Dispatch, SetStateAction } from "react";
 
 import { SlClose } from "react-icons/sl";
 import { BsHeart } from "react-icons/bs";
@@ -25,17 +26,17 @@ export const categories = [
   "Electronics",
   "Installment",
 ];
-function Navbar() {
+function Navbar({ setShow }: { setShow: Dispatch<SetStateAction<boolean>> }) {
   return (
-    <header className="relative bg-blue-700 text-white rounded-b-3xl">
+    <header className="relative bg-blue-700 text-white rounded-b-3xl sticky top-0 z-10">
       <div className="w-11/12 lg:w-4/5 mx-auto pt-4">
         <div className="flex lg:flex-row lg:items-center lg:justify-between flex-col">
           <div className="flex items-center justify-between">
-            <BurgerIcon>
+            <BurgerIcon onClick={() => setShow(true)}>
               <aside className="hidden peer-checked:block absolute top-0 left-0 bg-white text-black min-h-screen w-full z-10">
                 <div className="w-11/12 mx-auto py-5">
                   <div className="flex items-center justify-between">
-                    <SlClose size={32} />
+                    <SlClose size={32} onClick={() => setShow(false)} />
                     <Logo className="bg-blue-700 rounded-3xl" />
                   </div>
                   <div className="flex flex-col gap-5 my-5">
